@@ -6,12 +6,99 @@
     <title>Document</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Navbar Styling */
+      /* Navbar Styling */
+      .nav {
+            font-weight: bold; /* Make the navbar items bold */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow to navbar */
+            border-bottom: 2px solid #ddd; /* Add a bottom border */
+            padding: 10px 0; /* Add some vertical padding */
+            background-color: var(--navbar-bg); /* Dynamic background color */
+        }
+
+        .nav-link {
+            color: var(--text-color); /* Dynamic text color */
+            transition: color 0.3s ease; /* Smooth color transition */
+        }
+
+        .nav-link:hover {
+            color: #007bff; /* Change color on hover */
+        }
+
+        /* Dark Mode Styling */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --navbar-bg: #f8f9fa;
+        }
+
+        .dark-mode {
+            --bg-color: #121212;
+            --text-color: #ffffff;
+            --navbar-bg: #333333;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Responsive Navbar */
+        @media (max-width: 768px) {
+            .nav {
+                font-size: 14px; /* Reduce font size on smaller screens */
+            }
+        }
+
+        
+        
+        /* Toggle Button Styling */
+        .toggle-button {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--navbar-bg);
+            border: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+            margin-top: 10px; /* Position the button below the navbar */
+        }
+        /* Default styling for the title */
+h1 {
+    color: #1a202c; /* Default text color in light mode */
+}
+h2{
+  color: #1a202c; 
+
+}
+.dark-mode h2 {
+    color: white; /* Change color to white in dark mode */
+}
+
+
+/* Dark Mode Styling for the title */
+.dark-mode h1 {
+    color: white; /* Change color to white in dark mode */
+}
+
+    </style>
 
     <script>
       // JavaScript function to open a new page in the same tab
       function openPage(page) {
-          window.location.href = page;
+         
+        window.location.href = page;
       }
+      // JavaScript function to toggle dark mode
+      function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
   </script>
 </head>
 <body>
@@ -27,11 +114,13 @@
       <a class="nav-link" href="#" onclick="openPage('skills.html')">SKILLS</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#" onclick="openPage('courses.html')">COURSES DONE</a>
+        <a class="nav-link" href="#" onclick="openPage('first.html')">HOME PAGE</a>
       </li>
     
   </ul>
   <br><br>
+  <button class="toggle-button" onclick="toggleDarkMode()">Change Mode</button>
+  <br>
 
 
 

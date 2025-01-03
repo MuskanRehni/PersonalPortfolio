@@ -14,6 +14,28 @@
       background-position: center;
       height: 100vh;
     }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    .fade-in-up-delayed {
+      animation: fadeInUp 1.5s ease-out;
+      animation-delay: 0.5s;
+      animation-fill-mode: backwards;
+    }
   </style>
 </head>
 <body class="background flex items-center justify-center">
@@ -21,18 +43,18 @@
   <!-- Content Container -->
   <div class="bg-black bg-opacity-50 p-8 rounded-lg text-center w-3/4 md:w-1/2 lg:w-1/3">
     <!-- Profile Image -->
-    <div class="mx-auto mb-6">
+    <div class="mx-auto mb-6 fade-in-up">
       <img src="https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/e61d0f8c-c5ea-43f0-951d-7af4afd0a3cc/40e552b0-d4ef-48c2-ac66-dc7e1e127749.png" alt="Your Photo" class="w-40 h-40 rounded-full mx-auto border-4 border-white shadow-lg">
     </div>
 
     <!-- Name -->
-    <h1 class="text-white text-3xl md:text-4xl font-bold mb-2">MUSKAN REHNI</h1>
+    <h1 class="text-white text-3xl md:text-4xl font-bold mb-2 fade-in-up-delayed">MUSKAN REHNI</h1>
 
     <!-- Short Description -->
-    <p class="text-white text-lg mb-6">Student At Chitkata University, Rajpura, Punjab</p>
+    <p class="text-white text-lg mb-6 fade-in-up-delayed">Student At Chitkara University, Rajpura, Punjab</p>
 
     <!-- More About Me Button -->
-    <a href="aboutme.html">
+    <a href="aboutme.html" class="fade-in-up-delayed">
         <button class="bg-blue-500 text-white px-6 py-2 rounded-lg text-lg hover:bg-blue-600">
             More About Me
         </button>

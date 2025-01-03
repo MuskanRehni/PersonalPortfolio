@@ -3,86 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Responsive Profile Page</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Navbar Styling */
+        .nav {
+            font-weight: bold; /* Make the navbar items bold */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow to navbar */
+            border-bottom: 2px solid #ddd; /* Add a bottom border */
+            padding: 10px 0; /* Add some vertical padding */
+            background-color: var(--navbar-bg); /* Dynamic background color */
+        }
 
-  <style>
-    .zoom-image {
-        transition: transform 0.3s ease; /* Smooth transition */
-    }
-    .zoom-image:hover {
-        transform: scale(1.2); /* Zoom in on hover */
-    }
-  </style>
+        .nav-link {
+            color: var(--text-color); /* Dynamic text color */
+            transition: color 0.3s ease; /* Smooth color transition */
+        }
 
-<script>
-    // JavaScript function to open a new page in the same tab
-    function openPage(page) {
-        window.location.href = page;
-    }
-</script>
+        .nav-link:hover {
+            color: #007bff; /* Change color on hover */
+        }
+
+        /* Dark Mode Styling */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --navbar-bg: #f8f9fa;
+        }
+
+        .dark-mode {
+            --bg-color: #121212;
+            --text-color: #ffffff;
+            --navbar-bg: #333333;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Responsive Navbar */
+        @media (max-width: 768px) {
+            .nav {
+                font-size: 14px; /* Reduce font size on smaller screens */
+            }
+        }
+
+        .zoom-image {
+            transition: transform 0.3s ease; /* Smooth transition */
+        }
+
+        .zoom-image:hover {
+            transform: scale(1.2); /* Zoom in on hover */
+        }
+
+        /* Responsive styling for the image container */
+        @media (max-width: 768px) {
+            .image-container {
+                align-self: flex-start; /* Move image div to the top-left */
+                margin-bottom: 10px; /* Add some spacing below the image */
+                text-align: left; /* Align text left */
+            }
+
+            .text-container {
+                text-align: left; /* Ensure text aligns left */
+            }
+        }
+
+        /* Toggle Button Styling */
+        .toggle-button {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--navbar-bg);
+            border: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+            margin-top: 10px; /* Position the button below the navbar */
+        }
+    </style>
 </head>
 <body>
-
+    <!-- Navbar -->
     <ul class="nav justify-content-center">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">INTRO</a>
+            <a class="nav-link active" aria-current="page" href="#">INTRO</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" onclick="openPage('projects.html')">PROJECTS</a>
+            <a class="nav-link" href="#" onclick="openPage('projects.html')">PROJECTS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" onclick="openPage('skills.html')">SKILLS</a>
+            <a class="nav-link" href="#" onclick="openPage('skills.html')">SKILLS</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" onclick="openPage('courses.html')">COURSES DONE</a>
-          </li>
-        
-      </ul>
+            <a class="nav-link" href="#" onclick="openPage('first.html')">HOME PAGE</a>
+        </li>
+    </ul>
 
+    <!-- Dark/Light Mode Toggle Button -->
+    <button class="toggle-button" onclick="toggleDarkMode()">Change Mode</button>
 
-      <!-- Resume Page Content -->
+    <!-- Resume Page Content -->
+    <div class="max-w-4xl mx-auto mt-10 flex flex-wrap md:flex-nowrap">
+        <div class="w-full md:w-1/4 text-center md:text-left md:order-1 order-2 image-container">
+            <!-- Profile Picture -->
+            <img src="muskan.jpeg" alt="Profile Picture" class="rounded-full mb-4 object-cover object-top zoom-image" style="width: 170px; height: 170px; margin: 20px;">
+        </div>
+        <div class="w-full md:w-3/4 text-container">
+            <h1 class="text-3xl font-bold">Muskan Rehni</h1>
+            <p class="text-gray-700">Punjab, India | muskanrehni2004@gmail.com | +91 9988615453</p>
 
-      <div class="max-w-4xl mx-auto mt-10">
-        <div class="flex items-center justify-between">
-            <div class="w-1/4 text-center">
-                <!-- Profile Picture -->
-                <img src="muskan.jpeg" alt="Profile Picture" class="rounded-full mb-4 object-cover object-top zoom-image" style="width: 170px; height: 170px;">
+            <!-- Profile Section -->
+            <h3 class="text-xl mt-6 font-semibold">PROFILE</h3>
+            <p class="text-gray-700">
+                Computer Science student with a strong passion for learning and mastering new technologies.
+                Proven track record in coding and web development, specializing in the MERN stack, with a solid foundation in front-end development using React, HTML, CSS (Bootstrap)(Tailwindcss), and JavaScript.
+                Proficient in data structures and algorithms (DSA) and skilled in tackling complex problems across various platforms.
+                Additionally, possesses a solid understanding of machine learning concepts, supported by a hands-on project in AI.
+                Seeking a challenging role in a forward-thinking organization to expand technical skill set, collaborate with like-minded professionals, and contribute to innovative solutions and team success.
+            </p>
 
-            </div>
-            <div class="w-3/4">
-                <h1 class="text-3xl font-bold">Muskan Rehni</h1>
-                <p class="text-gray-700">Punjab, India | muskanrehni2004@gmail.com | +91 9988615453 </p>
+            <!-- Education Section -->
+            <h3 class="text-xl mt-6 font-semibold">EDUCATION</h3>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li>Class X (CBSE) with 89.6% - Ryan International School, Patiala (2019-2020)</li>
+                <li>Class XII (CBSE) with 90% - Ryan International School, Patiala (2021-2022)</li>
+            </ul>
 
-                <!-- Profile Section -->
-                <h3 class="text-xl mt-6 font-semibold">PROFILE</h3>
-                <p class="text-gray-700">Computer Science student with a strong passion for learning and mastering new technologies. Proven track record in coding and web development, specializing in the MERN stack, with a solid foundation in front-end development using React, HTML, CSS (Bootstrap)(Tailwindcss), and JavaScript. Proficient in data structures and algorithms (DSA) and skilled in tackling complex problems across various platforms. Additionally, possesses a solid understanding of machine learning concepts, supported by a hands-on project in AI. Seeking a challenging role in a forward-thinking organization to expand technical skill set, collaborate with like-minded professionals, and contribute to innovative solutions and team success.</p>
-
-                <!-- Education Section -->
-                <h3 class="text-xl mt-6 font-semibold">EDUCATION</h3>
-                <ul class="list-disc pl-5 text-gray-700">
-                    <li>Class X (CBSE) with 89.6% - Ryan International School, Patiala (2019-2020)</li>
-                    <li>Class XII (CBSE) with 90% - Ryan International School, Patiala (2021-2022)</li>
-                </ul>
-
-                <!-- Skills Section -->
-                
-
-                <!-- Languages Section -->
-                <h3 class="text-xl mt-6 font-semibold">LANGUAGES</h3>
-                <p class="text-gray-700">Hindi, English, Punjabi</p>
-            </div>
+            <!-- Languages Section -->
+            <h3 class="text-xl mt-6 font-semibold">LANGUAGES</h3>
+            <p class="text-gray-700">Hindi, English, Punjabi</p>
         </div>
     </div>
 
+    <script>
+        // JavaScript function to open a new page in the same tab
+        function openPage(page) {
+            window.location.href = page;
+        }
 
+        // JavaScript function to toggle dark mode
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
 
-    
-
-
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
